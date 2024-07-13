@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     addIdeaForm.addEventListener('submit', function(event) {
         event.preventDefault();
-
+        
         const idea = {
             text: ideaText.value,
             date: ideaDate.value,
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ideas.forEach((idea, index) => {
             const li = document.createElement('li');
             li.innerHTML = `<strong>${idea.date}</strong>: ${idea.text}`;
-
+            
             if (idea.image) {
                 const img = document.createElement('img');
                 img.src = URL.createObjectURL(idea.image);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 img.style.maxWidth = '100px'; // Adjust image display size
                 li.appendChild(img);
             }
-
+            
             if (idea.audio) {
                 const audio = document.createElement('audio');
                 audio.controls = true;
